@@ -18,11 +18,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
         binding.button.setOnClickListener {
-            val intent = Intent(this, LoginActivity2::class.java)
+            val intent= Intent(this,LoginActivity2::class.java)
             startActivity(intent)
+        }
+        binding.button.setOnClickListener {
             validateLogin()
             clearErrors()
+
+
         }
 
     }
