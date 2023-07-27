@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvLogos" type="id" />
+    <item name="tilEmails" type="id" />
+    <item name="etEmails" type="id" />
+    <item name="tilPasswords" type="id" />
+    <item name="etPasswords" type="id" />
+    <item name="btnLogins" type="id" />
+    <item name="pbLoad" type="id" />
+</resources>
