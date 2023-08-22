@@ -7,13 +7,6 @@ data class User(
    @SerializedName("first_name")var firstName:String,
    @SerializedName("last_name")var lastName:String,
    @SerializedName("user_id")var userId:String,
-   var email:String
+   @SerializedName("email")  var email:String
 )
 
-//data class User(
-//   var phone_Number:String,
-//   var first_Name: String,
-//   var last_Name:String,
-//   var user_id: String,
-//   var email:String
-//)

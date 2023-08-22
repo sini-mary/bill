@@ -1,5 +1,6 @@
 package megan.wamboi.billsapp.ui
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import androidx.lifecycle.Observer
 import megan.wamboi.billsapp.databinding.ActivityMainBinding
 import megan.wamboi.billsapp.model.RegisterRequest
 import megan.wamboi.billsapp.viewmodel.UserViewModel
+import utils.Constants
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        redirectUser()
     }
 
     override fun onResume() {
@@ -93,6 +96,7 @@ class MainActivity : AppCompatActivity() {
             userViewModel.registerUser(registerRequest)
         }
 
+
     }
 
     private fun clearErrors() {
@@ -103,4 +107,18 @@ class MainActivity : AppCompatActivity() {
         binding.tilPassword.error = null
         binding.tilConfirmPassword.error = null
     }
+    fun redirectUser(){
+        //access shared preferences soas to be able to read
+        val sharedprefs=getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE)
+        val userId=sharedprefs.getString(Constants.USER_ID,Constants.EMPTY_STRING)!!
+        if(userId.isNotBlank()){
+            startActivity(Intent(this,HomeActivity::class.java))
+            finish()
+        }
+        else{
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
+
+    }
+
 }
