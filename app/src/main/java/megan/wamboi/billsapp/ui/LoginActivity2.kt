@@ -34,7 +34,7 @@ class LoginActivity2 : AppCompatActivity() {
         clearErrors()
 
         binding.btnLogins.setOnClickListener {
-            val intent= Intent(this@LoginActivity2 ,HomeActivity::class.java)
+            val intent= Intent(this@LoginActivity2 ,MainActivity2::class.java)
             startActivity(intent)
             validate()
 
@@ -49,7 +49,7 @@ class LoginActivity2 : AppCompatActivity() {
             persistlogin(logResponse)
             binding.btnLogins.visibility = View.GONE
             Toast.makeText(this, logResponse.message, Toast.LENGTH_LONG).show()
-            startActivity(Intent(this, HomeActivity::class.java))
+            startActivity(Intent(this, MainActivity2::class.java))
         })
     }
 
@@ -126,7 +126,7 @@ class LoginActivity2 : AppCompatActivity() {
         loginViewModel.errorLiveData.observe(this){
             error->
             Toast.makeText(this,error,Toast.LENGTH_LONG).show()
-            startActivity(Intent(this,HomeActivity::class.java))
+            startActivity(Intent(this,MainActivity2::class.java))
         }
     }
 

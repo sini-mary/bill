@@ -112,11 +112,11 @@ class MainActivity : AppCompatActivity() {
         val sharedprefs=getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE)
         val userId=sharedprefs.getString(Constants.USER_ID,Constants.EMPTY_STRING)!!
         if(userId.isNotBlank()){
-            startActivity(Intent(this,HomeActivity::class.java))
+            startActivity(Intent(this,MainActivity2::class.java))
             finish()
         }
         else{
-            startActivity(Intent(this, HomeActivity::class.java))
+            startActivity(Intent(this, MainActivity2::class.java))
         }
 
     }

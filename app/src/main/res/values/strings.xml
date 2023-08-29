@@ -1,5 +1,14 @@
-<resources>
-    <string name="app_name">Bills App</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-</resources>
+
+    <resources>
+        <string name="app_name">SpinnerInKotlin</string>
+        <string name="selected_item">Selected item:</string>
+
+        <string-array name="Frequency">
+            <item>Daily</item>
+            <item>Weekly</item>
+            <item>Monthly</item>
+            <item>Quarterly</item>
+            <item>Yearly</item>
+        </string-array>
+    </resources>
+
