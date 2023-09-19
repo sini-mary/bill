@@ -6,7 +6,6 @@ import android.content.Context
 class BillsApp:Application() {
     companion object{
         lateinit var appContext: Context
-
     }
 
     override fun onCreate() {

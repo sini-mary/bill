@@ -1,14 +1,16 @@
 package megan.wamboi.billsapp.model
 
-import android.widget.EditText
-import android.widget.SpinnerAdapter
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-@Entity(tableName = "Bills")
+import androidx.room.util.TableInfo.Index
+
+@Entity(tableName = "Bills",
+    indices = [androidx.room.Index(value =["name"], unique = true)])
 data class Bill(
     @PrimaryKey val billid:String,
     var name:String,
-    var amount: String,
-    var frequency: SpinnerAdapter,
-    var dueDate: EditText
+    var amount: Double,
+    var frequency: String,
+    var dueDate: String,
+
 )

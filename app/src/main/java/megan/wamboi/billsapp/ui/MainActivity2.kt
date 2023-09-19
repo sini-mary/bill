@@ -2,13 +2,17 @@ package megan.wamboi.billsapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import megan.wamboi.billsapp.R
 import megan.wamboi.billsapp.databinding.ActivityMain2Binding
 import megan.wamboi.billsapp.databinding.FragmentSummaryBinding
+import megan.wamboi.billsapp.viewmodel.BillsViewModel
 
 class MainActivity2 : AppCompatActivity() {
 
     lateinit var binding: ActivityMain2Binding
+    val billsViewModel :BillsViewModel by viewModels()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +25,7 @@ class MainActivity2 : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         setupBottomNav()
+        billsViewModel.createUpcomingBills()
 
     }
     fun setupBottomNav(){
